@@ -1,6 +1,4 @@
-# pysemql
-
-pySemQL is a close-to-native query language for the semantic web that transpiles to SPARQL
+# pySemQL Specification Draft
 
 The SPARQL syntax is very hard to read, hard to remember and close to very old concepts of SQL. How could a modern syntax look like, which should be closer to native English (or at least python with it's pythonic simplicity) ? Please make a proposal that covers the main SPARQL language features.
 
@@ -29,7 +27,7 @@ Natural language flow: Reads like a structured English sentence.
 | Order/Limit        | order by, limit                         | ORDER BY, LIMIT            |
 
 
-## Examples
+## Exmaples
 
 ```
 find scientist discovery where
@@ -42,18 +40,3 @@ order by discovery.year desc
 limit 5
 
 ```
-Which transpiles to the following SPARQL query:
-
-```sparql
-SELECT ?scientist ?discovery WHERE {
-  ?scientist a dbo:Scientist .
-  ?scientist dbo:discovery ?discovery .
-  ?scientist dbo:birthPlace ?city .
-  ?city dbo:country "Germany" .
-  FILTER(?discovery.year > 1900)
-}
-ORDER BY DESC(?discovery.year)
-LIMIT 5
-```
-
-
