@@ -28,5 +28,6 @@ build-backend = "hatchling.build"
 [dependency-groups]
 dev = [
     "bump-my-version>=0.32.2",
+    "pre-commit>=4.1.0",
     "pytest>=8.3.4",
 ]
